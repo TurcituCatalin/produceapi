@@ -44,4 +44,16 @@ public class ErrorSolver {
         return response;
     }
 
+    @ExceptionHandler(NumberFormatException.class)
+    public ErrorResponse handleNumberFormatException(NumberFormatException exception,
+                                                                      HttpServletResponse servletResponse) {
+        ErrorResponse response = new ErrorResponse();
+        response.setErrorDescription("Input must be an integer");
+        servletResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
+        log.info("Error NumberFormatException found");
+        log.warn("Error has been found returning status: " + HttpServletResponse.SC_BAD_REQUEST);
+
+        return response;
+    }
 }
