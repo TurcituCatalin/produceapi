@@ -152,7 +152,7 @@ public class ControllerImpl implements Controller{
         httpServletResponse.setStatus(HttpServletResponse.SC_CREATED);
 
         addResponse.setBookId(book.getBookId());
-        addResponse.setResponseDescription("Book " + book.getTitle() + " by " + book.getTitle() +  " added.");
+        addResponse.setResponseDescription("Book " + book.getTitle() + " by " + book.getAuthor() +  " added.");
 
         return addResponse;
     }
